@@ -1,6 +1,6 @@
 import pandas as pd
 
-from portcalc.portcalc import data_preparation
+from data.data import data_preparation
 from portcalc.portcalc import simulation
 from portcalc.portcalc import get_efficient_frontier
 from portcalc.portcalc import get_max_sr_portfolio
