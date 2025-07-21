@@ -9,7 +9,7 @@ from plots.plots import save_plots
 
 def main():
     portfolios = 50
-    simulations = 500
+    simulations = 1000
 
     data = data_preparation()
 
