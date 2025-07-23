@@ -56,16 +56,16 @@ Lastly, one should choose the ETF that has a large market capitalization and a c
 
 ### My personal (opinionated) ETF list
 
-**USA**:
+- **USA**:
   - [IE00B3XXRP09](https://www.justetf.com/en/etf-profile.html?isin=IE00B3XXRP09)
-**Switzerland**:
+- **Switzerland**:
   - [CH0237935652](https://www.justetf.com/en/etf-profile.html?isin=CH0237935652)
   - [CH0237935637](https://www.justetf.com/en/etf-profile.html?isin=CH0237935637)
-**United Kingdom**:
+- **United Kingdom**:
   - [IE0005042456](https://www.justetf.com/en/etf-profile.html?isin=IE0005042456)
-**Japan**:
+- **Japan**:
   - [IE00B95PGT31](https://www.justetf.com/en/etf-profile.html?isin=IE00B95PGT31)
-**EMU (Economic and Monetary Union)**:
+- **EMU (Economic and Monetary Union)**:
   - [LU0147308422](https://www.justetf.com/en/etf-profile.html?isin=LU0147308422)
-**EM (Emerging Markets)**:
+- **EM (Emerging Markets)**:
   - [IE00B3VVMM84](https://www.justetf.com/en/etf-profile.html?isin=IE00B3VVMM84)
