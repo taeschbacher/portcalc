@@ -37,3 +37,19 @@ To update the source index data, download the data from the [SNB data portal](ht
 Navigate to "Foreign exchange rates" and then to "Foreign exchange rates - Month". Select only "End of month" and download the "CSV (selection)" for the full date range possible.
 
 Once downloaded, the new data should be appended in "data/usdchf.csv".
+
+
+
+## ETFs
+
+Selecting and choosing ETFs to implement the strategic asset allocation can be a daunting task due to the huge selection.
+
+ETF scanners can be of help here:
+- [Swissquote](https://www.swissquote.ch/trading-platform/#scanner)
+- [justETF](https://www.justetf.com/en/search.html?search=ETFS)
+
+As a general guideline, I like to choose ETFs that have as their benchmark the respective MSCI benchmark or are closely correlated to it (i.e. major stock market index of that country/region, e.g. S&P500 for the USA).
+
+Furthermore, I personally prefer distributing (not accumulating) ETFs.
+
+Lastly, one should choose the ETF that has a larges market capitalization and a cheap TER (total expense ratio).
