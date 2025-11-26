@@ -52,7 +52,7 @@ Once downloaded, the new data should be appended in "data/historyIndex.csv". The
 
 To update the source exchange rate data, download the data from the [SNB data portal](https://data.snb.ch/en):
 
-Navigate to "Foreign exchange rates" and then to "Foreign exchange rates - Month". Select only "End of month" and download the "CSV (selection)" for the full date range possible.
+Navigate to "Foreign exchange rates" and then to "Foreign exchange rates - Month". Select only "End of month", navigate to Currency tab and only select "United States – USD 1". Then download the "CSV (selection)" for the full date range possible.
 
 Once downloaded, the new data should be appended in "data/usdchf.csv".
 
