@@ -9,6 +9,7 @@ def save_plots(
     data, result_resampled, result_efficient_frontier, max_sr_portfolio, portfolios
 ):
     save_plot_index(data=data, index_name="ch")
+    save_plot_indices_chf(data=data)
     save_plot_area(data=data, result_resampled=result_resampled, portfolios=portfolios)
     save_plot_efficient_frontier(result_efficient_frontier)
     save_plot_index_max_sr_portfolio(data, result_resampled, max_sr_portfolio)
@@ -28,6 +29,30 @@ def save_plot_index(data, index_name):
         (data[index_name].to_numpy() + 1).cumprod() * 100,
     )
     plt.savefig(f"plots/index_{index_name}.pdf", format="pdf")
+
+
+def save_plot_indices_chf(data):
+    plt.figure()
+    fig, ax = plt.subplots(constrained_layout=True)
+    locator = mdates.AutoDateLocator()
+    formatter = mdates.ConciseDateFormatter(locator)
+    ax.xaxis.set_major_locator(locator)
+    ax.xaxis.set_major_formatter(formatter)
+
+    dates = pd.to_datetime(data.index, format="%Y-%m-%d")
+    assets = data.shape[1]
+
+    plt.ylabel("Total return index")
+    for asset in range(assets):
+        index_name = data.columns[asset]
+        ax.plot(
+            dates,
+            (data[index_name].to_numpy() + 1).cumprod() * 100,
+            label=index_name,
+        )
+
+    ax.legend(loc="best")
+    plt.savefig("plots/indices_chf.pdf", format="pdf")
 
 
 def save_plot_index_max_sr_portfolio(data, result_resampled, max_sr_portfolio):
