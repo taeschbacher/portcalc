@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-from utils.portfolio_functions import portfolio_return
+from utils.portfolio_functions import index_returns, portfolio_return
 
 
 def save_plots(
@@ -26,7 +26,7 @@ def save_plot_index(data, index_name):
     plt.ylabel("Total return index")
     ax.plot(
         pd.to_datetime(data.index, format="%Y-%m-%d"),
-        (data[index_name].to_numpy() + 1).cumprod() * 100,
+        index_returns(data[index_name].to_numpy()),
     )
     plt.savefig(f"plots/index_{index_name}.pdf", format="pdf")
 
@@ -47,7 +47,7 @@ def save_plot_indices_chf(data):
         index_name = data.columns[asset]
         ax.plot(
             dates,
-            (data[index_name].to_numpy() + 1).cumprod() * 100,
+            index_returns(data[index_name].to_numpy()),
             label=index_name,
         )
 
@@ -66,14 +66,12 @@ def save_plot_index_max_sr_portfolio(data, result_resampled, max_sr_portfolio):
     plt.ylabel("Total return index")
     ax.plot(
         pd.to_datetime(data.index, format="%Y-%m-%d"),
-        (
+        index_returns(
             portfolio_return(
                 return_np=data.to_numpy(),
                 weight_np=result_resampled[:, max_sr_portfolio],
             )
-            + 1
-        ).cumprod()
-        * 100,
+        ),
     )
     plt.savefig("plots/index_max_sr_portfolio.pdf", format="pdf")
 
