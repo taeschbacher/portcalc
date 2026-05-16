@@ -39,10 +39,10 @@ def get_efficient_frontier(data, result_resampled, portfolios):
     return result_efficient_frontier
 
 
-def simulation(data, portfolios, simulations):
+def simulation(data, portfolios, simulations, inner_simulations):
     assets = data.shape[1]
 
-    result = np.zeros((simulations, assets, portfolios))
+    result = np.zeros((inner_simulations, assets, portfolios))
     result_resampled = np.zeros((assets, portfolios))
     result_efficient_frontier = np.zeros((2, portfolios))
 
@@ -54,7 +54,7 @@ def simulation(data, portfolios, simulations):
             data.index[random.choices(range(0, data.shape[0]), k=data.shape[0])]
         ]
 
-        for s in range(simulations):
+        for s in range(inner_simulations):
             dat = dat_meta.loc[
                 dat_meta.index[
                     random.choices(range(0, dat_meta.shape[0]), k=dat_meta.shape[0])

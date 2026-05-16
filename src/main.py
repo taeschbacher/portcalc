@@ -9,12 +9,16 @@ from plots.plots import save_plots
 
 def main():
     portfolios = 50
-    simulations = 1000
+    simulations = 5000
+    inner_simulations = 200
 
     data = data_preparation()
 
     result_resampled_meta = simulation(
-        data=data, portfolios=portfolios, simulations=simulations
+        data=data,
+        portfolios=portfolios,
+        simulations=simulations,
+        inner_simulations=inner_simulations,
     )
 
     result_efficient_frontier = get_efficient_frontier(
