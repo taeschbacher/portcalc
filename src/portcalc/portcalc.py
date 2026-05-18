@@ -50,15 +50,13 @@ def simulation(data, portfolios, simulations, inner_simulations):
     result_resampled_meta = np.zeros((assets, portfolios))
 
     for r in range(simulations):
-        dat_meta = data.loc[
-            data.index[random.choices(range(0, data.shape[0]), k=data.shape[0])]
+        dat_meta = data.iloc[
+            random.choices(range(0, data.shape[0]), k=data.shape[0])
         ]
 
         for s in range(inner_simulations):
-            dat = dat_meta.loc[
-                dat_meta.index[
-                    random.choices(range(0, dat_meta.shape[0]), k=dat_meta.shape[0])
-                ]
+            dat = dat_meta.iloc[
+                random.choices(range(0, dat_meta.shape[0]), k=dat_meta.shape[0])
             ].to_numpy()
 
             increment = (np.mean(dat, axis=0).max() - np.mean(dat, axis=0).min()) / (
